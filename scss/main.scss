@@ -1,0 +1,37 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+body {
+    text-align: center;
+}
+#search {
+    #search-bar {
+        width: 35%;
+        height: 30px;
+    }
+    #search-button {
+        height: 30px;
+    }
+}
+
+#content {
+    .view {
+        width: 45%;
+        height: 400px;
+        display: inline-block;
+    }
+    #detailed-view {
+        border: 1px solid red;
+    }
+    #list-view {
+        border: 1px solid blue;
+        overflow: auto;
+        .hero-Li {
+            text-align: left;
+            margin-left: 15px;
+            
+        }
+        h2 {
+                font-size: .8em;
+            }
+    }
+}
