@@ -7,16 +7,16 @@
 </head>
 
 <body ng-app="MarvelSuperHeroApp">
-    <header>
+    <header class="columns">
         <h1>Marvel-book</h1>
     </header>
 
-    <div id="search">
+    <div id="search" class="columns">
         <input type="text" id="search-bar" placeholder="Enter Marvel character's name here...">
         <button id="search-button">Search</button>
     </div>
 
-    <div id="content" ng-controller="MainController">
+    <div id="content" ng-controller="MainController" class="columns">
         <div id="detailed-view" class="view">
         <img src="{{current.url}}" >
             <h1> Name: {{current.name}} </h1>
