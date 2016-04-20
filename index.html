@@ -4,50 +4,9 @@
 <head>
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <script src="js/app.js"></script>
-<!--
-    <script type="text/template" id="detail-template">
-        <img src="<%= detail-img-url %>" id="detail-pic">
-        <h3>Name: </h3> <h2> <%= name %> </h2>
-        <div id="events-wrapper">
-            <div id="event-0>
-                <p> <%= events[0].name %> </p>
-                <p> <%= events[0].descr %> </p>
-                <p> <%= events[0].num %> </p>
-            </div>
-            <div id="event-1>
-                <p> <%= events[1].name %> </p>
-                <p> <%= events[1].descr %> </p>
-                <p> <%= events[1].num %> </p>
-            </div>
-            <div id="event-2>
-                <p> <%= events[2].name %> </p>
-                <p> <%= events[2].descr %> </p>
-                <p> <%= events[2].num %> </p>
-            </div>
-            <div id="event-3>
-                <p> <%= events[3].name %> </p>
-                <p> <%= events[3].descr %> </p>
-                <p> <%= events[3].num %> </p>
-            </div>
-            <div id="event-4>
-                <p> <%= events[4].name %> </p>
-                <p> <%= events[4].descr %> </p>
-                <p> <%= events[4].num %> </p>
-            </div>
-        </div>
-    </script>
--->
-<!--
-    <script type="text/template" id="list-template">
-        
-            <img src="<%= image %>"
-            <h2> <%= heroName %> </h2>
- 
-    </script>
--->
 </head>
 
-<body>
+<body ng-app="MarvelSuperHeroApp">
     <header>
         <h1>Marvel-book</h1>
     </header>
@@ -56,10 +15,49 @@
         <input type="text" id="search-bar" placeholder="Enter Marvel character's name here...">
         <button id="search-button">Search</button>
     </div>
-    
-    <div id="content">
-        <div id="detailed-view" class="view"></div>
-        <div id="list-view" class="view"></div>
+
+    <div id="content" ng-controller="MainController">
+        <div id="detailed-view" class="view">
+        <img src="{{current.url}}" >
+            <h1> Name: {{current.name}} </h1>
+            <h2> Events: </h2>
+            <ul>
+                <li>
+                    <h3>{{current.event0}}</h3>
+<!--                    <p>{{current.nu01}}</p>-->
+                    <p>{{current.info0}} </p>
+                </li>
+                <li>
+                    <h3>{{current.event1}}</h3>
+<!--                     <p>{{current.num1}}</p>-->
+                    <p>{{current.info1}} </p>
+                </li>
+                <li>
+                    <h3>{{current.event2}}</h3>
+<!--                     <p>{{current.num2}}</p>-->
+                    <p>{{current.info2}} </p>
+                </li>
+                <li>
+                    <h3>{{current.event3}}</h3>
+<!--                     <p>{{current.num3}}</p>-->
+                    <p>{{current.info3}} </p>
+                </li>
+                <li>
+                    <h3>{{current.event4}}</h3>
+<!--                     <p>{{current.num4}}</p>-->
+                    <p>{{current.info4}} </p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="list-view" class="view">
+            <ul>
+                <li ng-click="getDetails(hero)" ng-repeat=" hero in heroes">
+                    <img src="{{hero.thumbnail.path}}/standard_medium.{{hero.thumbnail.extension}}" alt="Image thumbnail">
+                    <h2> {{hero.name}} </h2>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 

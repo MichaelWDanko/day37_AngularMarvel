@@ -1,9 +1,25 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
+@import url(https://fonts.googleapis.com/css?family=Marvel:400,700);
+
+$font-stack1: 'Marvel', sans-serif;
+
 body {
-    text-align: center;
+margin: 0;
+}
+header {
+    background-color: red;
+    padding-top: 20px;
+    padding-left: 10px;
+    h1 {
+        text-transform: uppercase;
+        color: white;
+        font-size: 3em;
+        font-family: $font-stack1;
+    }
 }
 #search {
+//    width: 100%;
     #search-bar {
         width: 35%;
         height: 30px;
@@ -14,24 +30,29 @@ body {
 }
 
 #content {
+    width: 100%;
+    padding: 0 20px;
     .view {
         width: 45%;
-        height: 400px;
+        height: 600px;
         display: inline-block;
+        vertical-align: top;
     }
     #detailed-view {
         border: 1px solid red;
+        overflow: auto;
     }
     #list-view {
         border: 1px solid blue;
         overflow: auto;
         .hero-Li {
-            text-align: left;
+//            text-align: left;
             margin-left: 15px;
             
         }
         h2 {
-                font-size: .8em;
+            font-size: .8em;
+            display: inline-block;
             }
     }
 }
