@@ -3,9 +3,12 @@
 @import url(https://fonts.googleapis.com/css?family=Marvel:400,700);
 
 $font-stack1: 'Marvel', sans-serif;
+$color-stack1: red;
+$color-stack2: black;
 
 body {
 margin: 0;
+    background-color: $color-stack2;
 }
 .columns {
     padding: 0 3%;
@@ -37,27 +40,51 @@ header {
 #content {
     width: 100%;
 //    padding: 0 20px;
+    justify-content: space-around;
     .view {
         width: 45%;
         height: 600px;
         display: inline-block;
         vertical-align: top;
+        border-top: 1px solid $color-stack1;
+        border-bottom: 1px solid $color-stack1;
     }
     #detailed-view {
-        border: 1px solid red;
+//        border: 1px solid red;
         overflow: auto;
+        background-color: $color-stack2;
+        color: white;
+        font-family: $font-stack1;
+        img {
+            margin-left: 10%;
+        }
     }
     #list-view {
-        border: 1px solid blue;
+//        border: 1px solid blue;
         overflow: auto;
-        .hero-Li {
-//            text-align: left;
-            margin-left: 15px;
+        background-color: $color-stack2;
+        li{
+            list-style: none;
+            background-color: $color-stack1;
+            margin: 2% 0;
+            img {
+               margin-top: 20px;
+                margin-left: 10px;
+            }
+            h2 {
+                font-size: .8em;
+                display: inline-block;
+                color: white;
+                font-size: 2em;
+                font-family: $font-stack1;
+                margin-bottom: 0;
+            }
             
         }
-        h2 {
-            font-size: .8em;
-            display: inline-block;
-            }
+    }
+}
+.event {
+    p {
+        font-size: 1.4em;
     }
 }
