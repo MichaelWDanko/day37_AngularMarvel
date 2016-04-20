@@ -31,7 +31,7 @@ mainApp.controller('MainController', function ($scope, $http) {
 
     $http({
         method: 'get',
-        url: 'http://gateway.marvel.com:80/v1/public/characters?apikey=0e7466623241b56d92fc74e4d5039354&limit=6',
+        url: 'http://gateway.marvel.com:80/v1/public/characters?apikey=0e7466623241b56d92fc74e4d5039354&limit=100',
     }).then(function (response) {
         console.log(response.data.data.results);
         $scope.heroes = response.data.data.results;
